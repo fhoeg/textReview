@@ -13,35 +13,10 @@ def load_system():
         system_text = f.read()
         # print(system_text)
 
-
-""" response = openai.ChatCompletion.create(
-  model="gpt-4",
-  messages=[
-    {
-      "role": "system",
-      "content": "When I ask for help to write something, you will reply with a document that contains at least one joke or playful comment in every paragraph."
-    },
-    {
-      "role": "system",
-      "content": "I will provide you with a text and I want you to improve it. Please explain the thought process behind your suggestions."
-    },
-    {
-      "role": "user",
-      "content": "Write a thank you note to my steel bolt vendor for getting the delivery in on time and in short notice. This made it possible for us to deliver an important order."
-    }
-  ],
-  max_tokens=1024,
-  top_p=1,
-  frequency_penalty=0,
-  presence_penalty=0
-) """
-
 def main():
     msgs = []
     load_system()
     # Get the chatbot type and name from the user
-    # system_msg = input("What kind of chatbot do you want?\n")
-    # system_msg = "You are a helpful design research assistant who help with quick ideation and brainstorming"
     system_msg = system_text
     msgs.append({"role": "system", "content": system_msg})
     
